@@ -12,7 +12,6 @@
         align-items: center;
         text-align: center;
         flex-direction: column;
-        align-items: flex-start;
       }
 
       .container {
@@ -20,9 +19,21 @@
       }
 
       #response {
+        width: 85%;
         margin-top: 20px;
         color: #333;
         font-family: Arial, sans-serif;
+        text-align: justify;
+      }
+
+      .error-word {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
       }
     </style>
   </head>
@@ -74,48 +85,49 @@
     <div id="response"></div>
 
     <script>
-      // Initialize CKEditor
-      CKEDITOR.replace('editor1', {
-        toolbar: [
-          { name: 'document', items: ['Print'] },
-          { name: 'clipboard', items: ['Undo', 'Redo'] },
-          { name: 'styles', items: ['Format', 'Font', 'FontSize'] },
-          { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat', 'CopyFormatting'] },
-          { name: 'colors', items: ['TextColor', 'BGColor'] },
-          { name: 'align', items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
-          { name: 'links', items: ['Link', 'Unlink'] },
-          { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'] },
-          { name: 'insert', items: ['Image', 'Table'] },
-          { name: 'tools', items: ['Maximize'] }
-        ],
-        customConfig: '',
-        disallowedContent: 'img{width,height,float}',
-        extraAllowedContent: 'img[width,height,align]',
-        height: 800,
-        contentsCss: ['mystyles.css'],
-        format_tags: 'p;h1;h2;h3;pre',
-        removeDialogTabs: 'image:advanced;link:advanced',
-        stylesSet: [
-          { name: 'Marker', element: 'span', attributes: { class: 'marker' } },
-          { name: 'Cited Work', element: 'cite' },
-          { name: 'Inline Quotation', element: 'q' },
-          {
-            name: 'Special Container',
-            element: 'div',
-            styles: { padding: '5px 10px', background: '#eee', border: '1px solid #ccc' }
-          },
-          {
-            name: 'Compact table',
-            element: 'table',
-            attributes: { cellpadding: '5', cellspacing: '0', border: '1', bordercolor: '#ccc' },
-            styles: { 'border-collapse': 'collapse' }
-          },
-          { name: 'Borderless Table', element: 'table', styles: { 'border-style': 'hidden', 'background-color': '#E6E6FA' } },
-          { name: 'Square Bulleted List', element: 'ul', styles: { 'list-style-type': 'square' } }
-        ]
-      });
+                        // Initialize CKEditor
+                        CKEDITOR.replace('editor1', {
+                          toolbar: [
+                            { name: 'document', items: ['Print'] },
+                            { name: 'clipboard', items: ['Undo', 'Redo'] },
+                            { name: 'styles', items: ['Format', 'Font', 'FontSize'] },
+                            { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat', 'CopyFormatting'] },
+                            { name: 'colors', items: ['TextColor', 'BGColor'] },
+                            { name: 'align', items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
+                            { name: 'links', items: ['Link', 'Unlink'] },
+                            { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'] },
+                            { name: 'insert', items: ['Image', 'Table'] },
+                            { name: 'tools', items: ['Maximize'] }
+                          ],
+                          customConfig: '',
+                          disallowedContent: 'img{width,height,float}',
+                          extraAllowedContent: 'img[width,height,align]',
+                          height: 800,
+                          contentsCss: ['mystyles.css'],
+                          format_tags: 'p;h1;h2;h3;pre',
+                          removeDialogTabs: 'image:advanced;link:advanced',
+                          stylesSet: [
+                            { name: 'Marker', element: 'span', attributes: { class: 'marker' } },
+                            { name: 'Cited Work', element: 'cite' },
+                            { name: 'Inline Quotation', element: 'q' },
+                            {
+                              name: 'Special Container',
+                              element: 'div',
+                              styles: { padding: '5px 10px', background: '#eee', border: '1px solid #ccc' }
+                            },
+                            {
+                              name: 'Compact table',
+                              element: 'table',
+                              attributes: { cellpadding: '5', cellspacing: '0', border: '1', bordercolor: '#ccc' },
+                              styles: { 'border-collapse': 'collapse' }
+                            },
+                            { name: 'Borderless Table', element: 'table', styles: { 'border-style': 'hidden', 'background-color': '#E6E6FA' } },
+                            { name: 'Square Bulleted List', element: 'ul', styles: { 'list-style-type': 'square' } }
+                          ]
+                        });
 
-      // Add event listener to the button
+
+            // Add event listener to the button
       document.getElementById('grammarBtn').addEventListener('click', function () {
         // Get the HTML content of the editor
         var htmlContent = CKEDITOR.instances.editor1.getData();
@@ -125,26 +137,40 @@
         tempDiv.innerHTML = htmlContent;
         var plainText = tempDiv.textContent || tempDiv.innerText || "";
 
-        // Log the plain text to the console
-        console.log(plainText);
-
         // Call the API using fetch
         fetch('http://11.0.0.125:8000/spellcheck/spell/checker/spelltext', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
-            'text': 'spelleng meeskake'
+            'Content-Type': 'application/json'
           },
           body: JSON.stringify({ text: plainText })
         })
         .then(response => response.json())
         .then(data => {
-          // Update the response div with the result
-          document.getElementById('response').innerHTML = 'Spellcheck result: ' + JSON.stringify(data, null, 2);
+          // Clear previous response
+          const responseDiv = document.getElementById('response');
+          responseDiv.innerHTML = '';
+
+          // Create an unordered list to display the results
+          const ul = document.createElement('ul');
+
+          // Iterate through the response data
+          data.forEach(item => {
+            // Create a list item for each error word and its suggestions
+            const li = document.createElement('li');
+
+            // Add bold formatting to the error word and display suggestions as a string
+            li.innerHTML = `<strong>${item.errorWord}</strong>: - ${item.suggestions.join(', ')}`;
+
+            // Append the list item to the unordered list
+            ul.appendChild(li);
+          });
+
+          // Append the unordered list to the responseDiv
+          responseDiv.appendChild(ul);
         })
         .catch(error => {
-          // Handle errors and display them in the response div
-          document.getElementById('response').innerHTML = 'Error: ' + error;
+          console.error('Error:', error);
         });
       });
     </script>
