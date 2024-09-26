@@ -5,7 +5,6 @@
     <script src="./ckeditor.js"></script>
     <title>Document Editor</title>
     <style type="text/css">
-      /* Minimal styling to center the editor in this sample */
       body {
         padding: 30px;
         display: flex;
@@ -13,11 +12,9 @@
         text-align: center;
         flex-direction: column;
       }
-
       .container {
         margin: 0 auto;
       }
-
       #response {
         width: 85%;
         margin-top: 20px;
@@ -25,12 +22,10 @@
         font-family: Arial, sans-serif;
         text-align: justify;
       }
-
       .error-word {
         font-weight: bold;
         margin-bottom: 10px;
       }
-
       ul {
         list-style-type: disc;
         padding-left: 20px;
@@ -41,186 +36,136 @@
     <div class="container">
       <h2><label for="editor1">Document Editor</label></h2>
       <textarea id="editor1">
-        &lt;h2 style="text-align: center;"&gt;The Flavorful Tuscany Meetup&lt;/h2&gt;
-        &lt;p style="text-align: center;"&gt;&lt;span style="color: #007ac9;"&gt;&lt;strong&gt;Welcome letter&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-        &lt;p&gt;Dear Guest,&lt;/p&gt;
-        &lt;p&gt;We are delighted to welcome you to the annual &lt;em&gt;Flavorful Tuscany Meetup&lt;/em&gt; and hope you will enjoy the programme as well as your stay at the Bilancino Hotel.&lt;/p&gt;
-        &lt;p&gt;Please find below the full schedule of the event.&lt;/p&gt;
-        &lt;table class="schedule" cellpadding="15" cellspacing="0" style="border-collapse:collapse;width:100%;"&gt;
-          &lt;thead&gt;
-            &lt;tr&gt;
-              &lt;th colspan="2" scope="col" style="background-color: #F2F9FF; text-align: center; font-size: 21px;"&gt;&lt;span&gt;Saturday, July 14&lt;/span&gt;&lt;/th&gt;
-            &lt;/tr&gt;
-          &lt;/thead&gt;
-          &lt;tbody&gt;
-            &lt;tr&gt;
-              &lt;td style="white-space:nowrap;"&gt;&lt;span&gt;9:30 AM - 11:30 AM&lt;/span&gt;&lt;/td&gt;
-              &lt;td&gt;&lt;span&gt;Americano vs. Brewed - “know your coffee” session with &lt;strong&gt;Stefano Garau&lt;/strong&gt;&lt;/span&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-              &lt;td style="white-space:nowrap;"&gt;&lt;span&gt;1:00 PM - 3:00 PM&lt;/span&gt;&lt;/td&gt;
-              &lt;td&gt;&lt;span&gt;Pappardelle al pomodoro - live cooking session with &lt;strong&gt;Rita Fresco&lt;/strong&gt;&lt;/span&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-              &lt;td style="white-space:nowrap;"&gt;&lt;span&gt;5:00 PM - 8:00 PM&lt;/span&gt;&lt;/td&gt;
-              &lt;td&gt;&lt;span&gt;Tuscan vineyards at a glance - wine-tasting session with &lt;strong&gt;Frederico Riscoli&lt;/strong&gt;&lt;/span&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-          &lt;/tbody&gt;
-        &lt;/table&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;The annual Flavorful Tuscany meetups are always a culinary discovery. You get the best of Tuscan flavors during an intense one-day stay at one of the top hotels of the region. All the sessions are lead by top chefs passionate about their profession. I would certainly recommend to save the date in your calendar for this one!&lt;/p&gt;
-          &lt;p&gt;Angelina Calvino, food journalist&lt;/p&gt;
-        &lt;/blockquote&gt;
-        &lt;p&gt;Please arrive at the Bilancino Hotel reception desk at least &lt;strong&gt;half an hour earlier&lt;/strong&gt; to make sure that the registration process goes as smoothly as possible.&lt;/p&gt;
-        &lt;p&gt;We look forward to welcoming you to the event.&lt;/p&gt;
-        &lt;p&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;Victoria Valc&lt;/strong&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;Event Manager&lt;/strong&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;Bilancino Hotel&lt;/strong&gt;&lt;/p&gt;
-      </textarea>
+      &lt;h2 style="text-align: center;"&gt;The Flavorful Tuscany Meetup&lt;/h2&gt;
+      &lt;p style="text-align: center;"&gt;&lt;span style="color: #007ac9;"&gt;&lt;strong&gt;Welcome letter&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+      &lt;p&gt;Dear Guest,&lt;/p&gt;
+      &lt;p&gt;We are delighted to welcome you to the annual &lt;em&gt;Flavorful Tuscany Meetup&lt;/em&gt; and hope you will enjoy the programme as well as your stay at the Bilancino Hotel.&lt;/p&gt;
+      &lt;p&gt;Please find below the full schedule of the event.&lt;/p&gt;
+      &lt;table class="schedule" cellpadding="15" cellspacing="0" style="border-collapse:collapse;width:100%;"&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th colspan="2" scope="col" style="background-color: #F2F9FF; text-align: center; font-size: 21px;"&gt;&lt;span&gt;Saturday, July 14&lt;/span&gt;&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td style="white-space:nowrap;"&gt;&lt;span&gt;9:30 AM - 11:30 AM&lt;/span&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;span&gt;Americano vs. Brewed - “know your coffee” session with &lt;strong&gt;Stefano Garau&lt;/strong&gt;&lt;/span&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style="white-space:nowrap;"&gt;&lt;span&gt;1:00 PM - 3:00 PM&lt;/span&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;span&gt;Pappardelle al pomodoro - live cooking session with &lt;strong&gt;Rita Fresco&lt;/strong&gt;&lt;/span&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style="white-space:nowrap;"&gt;&lt;span&gt;5:00 PM - 8:00 PM&lt;/span&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;span&gt;Tuscan vineyards at a glance - wine-tasting session with &lt;strong&gt;Frederico Riscoli&lt;/strong&gt;&lt;/span&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+      &lt;blockquote&gt;
+        &lt;p&gt;The annual Flavorful Tuscany meetups are always a culinary discovery. You get the best of Tuscan flavors during an intense one-day stay at one of the top hotels of the region. All the sessions are lead by top chefs passionate about their profession. I would certainly recommend to save the date in your calendar for this one!&lt;/p&gt;
+        &lt;p&gt;Angelina Calvino, food journalist&lt;/p&gt;
+      &lt;/blockquote&gt;
+      &lt;p&gt;Please arrive at the Bilancino Hotel reception desk at least &lt;strong&gt;half an hour earlier&lt;/strong&gt; to make sure that the registration process goes as smoothly as possible.&lt;/p&gt;
+      &lt;p&gt;We look forward to welcoming you to the event.&lt;/p&gt;
+      &lt;p&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Victoria Valc&lt;/strong&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Event Manager&lt;/strong&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Bilancino Hotel&lt;/strong&gt;&lt;/p&gt;
+    </textarea
+      >
     </div>
-    <button id="grammarBtn">Spelling Mistakes</button>
-
-    <!-- Response div to show the result -->
+    <button id="grammarBtn">Grammar Mistakes</button>
     <div id="response"></div>
-
     <script>
-                                              // Initialize CKEditor
-                                              CKEDITOR.replace('editor1', {
-                                                                                                toolbar: [
-                                                                                                  { name: 'document', items: ['Print'] },
-                                                                                                  { name: 'clipboard', items: ['Undo', 'Redo'] },
-                                                                                                  { name: 'styles', items: ['Format', 'Font', 'FontSize'] },
-                                                                                                  { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat', 'CopyFormatting'] },
-                                                                                                  { name: 'colors', items: ['TextColor', 'BGColor'] },
-                                                                                                  { name: 'align', items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
-                                                                                                  { name: 'links', items: ['Link', 'Unlink'] },
-                                                                                                  { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'] },
-                                                                                                  { name: 'insert', items: ['Image', 'Table'] },
-                                                                                                  { name: 'tools', items: ['Maximize'] }
-                                                                                                ],
-                                                                                                customConfig: '',
-                                                                                                disallowedContent: 'img{width,height,float}',
-                                                                                                extraAllowedContent: 'img[width,height,align]',
-                                                                                                height: 800,
-                                                                                                contentsCss: ['mystyles.css'],
-                                                                                                format_tags: 'p;h1;h2;h3;pre',
-                                                                                                removeDialogTabs: 'image:advanced;link:advanced',
-                                                                                                stylesSet: [
-                                                                                                  { name: 'Marker', element: 'span', attributes: { class: 'marker' } },
-                                                                                                  { name: 'Cited Work', element: 'cite' },
-                                                                                                  { name: 'Inline Quotation', element: 'q' },
-                                                                                                  {
-                                                                                                    name: 'Special Container',
-                                                                                                    element: 'div',
-                                                                                                    styles: { padding: '5px 10px', background: '#eee', border: '1px solid #ccc' }
-                                                                                                  },
-                                                                                                  {
-                                                                                                    name: 'Compact table',
-                                                                                                    element: 'table',
-                                                                                                    attributes: { cellpadding: '5', cellspacing: '0', border: '1', bordercolor: '#ccc' },
-                                                                                                    styles: { 'border-collapse': 'collapse' }
-                                                                                                  },
-                                                                                                  { name: 'Borderless Table', element: 'table', styles: { 'border-style': 'hidden', 'background-color': '#E6E6FA' } },
-                                                                                                  { name: 'Square Bulleted List', element: 'ul', styles: { 'list-style-type': 'square' } }
-                                                                                                ]
-                                                                                              });
-                                                                                              document.getElementById('grammarBtn').addEventListener('click', function () {
-        // Scroll to the top of the page
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth' // Optional: Adds a smooth scrolling effect
-        });
-
-        // Get CKEditor instance
+      CKEDITOR.replace('editor1', {
+        toolbar: [
+          { name: 'document', items: ['Print'] },
+          { name: 'clipboard', items: ['Undo', 'Redo'] },
+          { name: 'styles', items: ['Format', 'Font', 'FontSize'] },
+          { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat', 'CopyFormatting'] },
+          { name: 'colors', items: ['TextColor', 'BGColor'] },
+          { name: 'align', items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
+          { name: 'links', items: ['Link', 'Unlink'] },
+          { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'] },
+          { name: 'insert', items: ['Image', 'Table'] },
+          { name: 'tools', items: ['Maximize'] }
+        ],
+        customConfig: '',
+        disallowedContent: 'img{width,height,float}',
+        extraAllowedContent: 'img[width,height,align]',
+        height: 800,
+        contentsCss: ['mystyles.css'],
+        format_tags: 'p;h1;h2;h3;pre',
+        removeDialogTabs: 'image:advanced;link:advanced',
+        stylesSet: [
+          { name: 'Marker', element: 'span', attributes: { class: 'marker' } },
+          { name: 'Cited Work', element: 'cite' },
+          { name: 'Inline Quotation', element: 'q' },
+          {
+            name: 'Special Container',
+            element: 'div',
+            styles: { padding: '5px 10px', background: '#eee', border: '1px solid #ccc' }
+          },
+          {
+            name: 'Compact table',
+            element: 'table',
+            attributes: { cellpadding: '5', cellspacing: '0', border: '1', bordercolor: '#ccc' },
+            styles: { 'border-collapse': 'collapse' }
+          },
+          { name: 'Borderless Table', element: 'table', styles: { 'border-style': 'hidden', 'background-color': '#E6E6FA' } },
+          { name: 'Square Bulleted List', element: 'ul', styles: { 'list-style-type': 'square' } }
+        ]
+      });
+      document.getElementById('grammarBtn').addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         var editor = CKEDITOR.instances.editor1;
-
-        // Get the current HTML content from CKEditor
         var htmlContent = editor.getData();
-
-        // Create a temporary element to strip HTML tags and get plain text
         var tempDiv = document.createElement('div');
         tempDiv.innerHTML = htmlContent;
         var plainText = tempDiv.textContent || tempDiv.innerText || "";
-
-        // Call the spellcheck API
         fetch('http://11.0.0.125:8000/spellcheck/spell/checker/spelltext', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ text: plainText })  // Send plain text to API
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: plainText })
         })
-        .then(response => response.json())  // Parse the JSON response
+        .then(response => response.json())
         .then(apiResponse => {
           console.log('API Response:', apiResponse);
-
-          // Create a DOM parser from the CKEditor HTML content
           var parser = new DOMParser();
           var doc = parser.parseFromString(htmlContent, 'text/html');
-
-          // Traverse the API response and highlight error words in the document
           apiResponse.forEach(function(item) {
             const { offset, length, errorWord } = item;
-
-            // Use the offset and length to find the exact error word in the plain text
             let errorPart = plainText.substring(offset, offset + length);
-
-            // Use regular expression to highlight only whole words
             highlightWholeWords(doc.body, errorPart);
           });
-
-          // Set the updated HTML back into the editor
           editor.setData(doc.body.innerHTML);
-
-          // Remove highlights after 3 seconds
-          setTimeout(() => removeHighlights(editor), 3000);
+          removeHighlights(editor)
         })
-        .catch(error => {
-          console.error('Error:', error);
-        });
+        .catch(error => { console.error('Error:', error); });
       });
-
-      // Function to recursively traverse and highlight whole words in text nodes
       function highlightWholeWords(element, searchWord) {
-        const treeWalker = document.createTreeWalker(
-          element,
-          NodeFilter.SHOW_TEXT,  // Only process text nodes
-          null,
-          false
-        );
-
+        const treeWalker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
         let currentNode;
         const wordBoundaryRegex = new RegExp(`\\b${escapeRegExp(searchWord)}\\b`, 'g');
-
         while ((currentNode = treeWalker.nextNode())) {
           let text = currentNode.nodeValue;
-
           if (wordBoundaryRegex.test(text)) {
             const newNode = document.createElement('span');
             newNode.innerHTML = text.replace(wordBoundaryRegex, function(match) {
-              return `<span class="highlighted" style="background-color: yellow;">${match}</span>`;
+              return `<span class="highlighted" style="background-color:green">${match}</span>`;
             });
-
-            // Replace current text node with the new node containing highlights
             currentNode.parentNode.replaceChild(newNode, currentNode);
           }
         }
       }
-
-      // Function to remove all highlights
       function removeHighlights(editor) {
-        // Get the current HTML content
         const editorContent = editor.getData();
-
-        // Replace highlighted spans with their inner text
-        const cleanedContent = editorContent.replace(/<span class="highlighted" style="background-color: yellow;">(.*?)<\/span>/g, '$1');
-
-        // Set the cleaned content back into the editor
+        console.log('Before removal:', editorContent);
+        const cleanedContent = editorContent.replace(/<span class="highlighted" style="background-color:green">(.*?)<\/span>/g, '$1');
+        console.log('After removal:', cleanedContent);
         editor.setData(cleanedContent);
       }
-
-      // Helper function to escape special characters for use in a regular expression
       function escapeRegExp(string) {
         return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       }
